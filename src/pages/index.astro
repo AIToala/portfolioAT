@@ -1,23 +1,48 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
+import Layout from '@/layouts/Layout.astro';
+
+import AboutMe from '@/components/AboutMe.astro';
+import Briefcase from '@/components/icons/Briefcase.astro';
+import CodeIcon from '@/components/icons/Code.astro';
+import Experience from '@/components/Experience.astro';
+import ProfileCheck from '@/components/icons/ProfileCheck.astro';
+import Projects from '@/components/Projects.astro';
+import SectionContainer from '@/components/SectionContainer.astro';
+import Hero from '@/components/Hero.astro';
 ---
 
 <Layout
-	title='Portfolio de Andres Toala - Ingeniero en Ciencias Computacionales'
-	description='Ingeniero en ciencias computacionales con experiencia en desarrollo web, aplicaciones móviles y diseño UX / UI.'
+	title='Porfolio de midudev - Desarrollador y Programador Web con 15 años de experiencia'
+	description='Contrata a midudev para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido. Especializado en crear aplicaciones únicas.'
 >
 	<main class='px-4'>
-		<section class='w-full lg:w-[740px] mx-auto py-44'>
-			<h1 class='text-gray-800 dark:text-white font-bold flex justify-center flex-row sm:text-5xl gap-x-4'>
-				Hey, soy Andrés Toala <a href='www.linkedin.com/in/aitoala' target='_blank'
-					><Badge>Disponible para trabajar</Badge></a
-				>
-			</h1>
-			<h2>
-				Desarrollador Web Junior y futuro Ingeniero en Ciencias Computacionales. De Guayaquil, Ecuador 🇪🇨.
-				Especializado en crear aplicaciones únicas.
-			</h2>
-		</section>
+		<SectionContainer class='py-16 md:py-36'>
+			<Hero />
+		</SectionContainer>
 	</main>
+	<div class='space-y-24'>
+		<SectionContainer id='experiencia'>
+			<h2 class='flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white'>
+				<Briefcase class='size-8' />
+				Experiencia laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id='proyectos'>
+			<h2 class='flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white'>
+				<CodeIcon class='size-7' />
+				Proyectos
+			</h2>
+			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id='sobre-mi'>
+			<h2 class='flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white'>
+				<ProfileCheck class='size-8' />
+				Sobre mí
+			</h2>
+			<AboutMe />
+		</SectionContainer>
+	</div>
 </Layout>
