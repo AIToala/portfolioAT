@@ -1,0 +1,24 @@
+---
+import EducationItem from './EducationItem.astro';
+const EDUCATION = [
+	{
+		carreer: 'Ingeniería en Ciencias de la Computación',
+		institution: 'Escuela Superior Politécnica del Litoral',
+		location: 'Guayaquil, Ecuador',
+		date: '2025',
+		description: '',
+		merits: '',
+		relevantCourses: '',
+	},
+];
+---
+
+<ol class='relative mt-16'>
+	{
+		EDUCATION.map((edu) => (
+			<li class=''>
+				<EducationItem {...edu} />
+			</li>
+		))
+	}
+</ol>
