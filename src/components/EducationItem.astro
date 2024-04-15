@@ -2,9 +2,10 @@
 import LinkInline from './LinkInline.astro';
 import StarIcon from './icons/Star.astro';
 import CometIcon from './icons/Comet.astro';
+import Certificate from './icons/Certificate.astro';
 
 interface Props {
-	carreer: string;
+	title: string;
 	institution: string;
 	location?: string;
 	description: string;
@@ -14,7 +15,7 @@ interface Props {
 	date: string;
 }
 
-const { carreer, institution, location, merits, relevantCourses, description, link, date } = Astro.props;
+const { title, institution, location, merits, relevantCourses, description, link, date } = Astro.props;
 ---
 
 <div
@@ -22,10 +23,9 @@ const { carreer, institution, location, merits, relevantCourses, description, li
 >
 	<div class='relative pb-12 md:col-span-2'>
 		<div class='sticky top-0'>
-			<span class='text-yellow-400 -left-[42px] absolute rounded-full text-5xl'>&bull;</span>
-
-			<h3 class='text-xl font-bold text-yellow-400'>{carreer}</h3>
-			<h4 class='font-semibold text-xl text-gray-600 dark:text-white'>{institution}</h4>
+			<span class='text-green-400 -left-[42px] absolute rounded-full text-5xl'>&bull;</span>
+			<h3 class='text-xl font-bold text-green-400'>{title}</h3>
+			<h4 class='font-semibold text-lg text-gray-600 dark:text-white'>{institution}</h4>
 			<h5 class='text-sm text-gray-600 dark:text-white'>{location}</h5>
 			<time class='p-0 m-0 text-sm text-gray-600/80 dark:text-white/80'>{date}</time>
 		</div>
@@ -34,8 +34,8 @@ const { carreer, institution, location, merits, relevantCourses, description, li
 		{description}
 		{
 			merits && (
-				<div>
-					<StarIcon />
+				<div class='flex flex-row gap-2 items-center'>
+					<StarIcon stroke='green' />
 					<h6 class='font-semibold text-sm text-gray-600 dark:text-white'>Méritos</h6>
 					<p>{merits}</p>
 				</div>
@@ -43,11 +43,21 @@ const { carreer, institution, location, merits, relevantCourses, description, li
 		}
 		{
 			relevantCourses && (
-				<div>
-					<CometIcon />
-					<h6 class='font-semibold text-sm text-gray-600 dark:text-white'>Cursos relevantes</h6>
-					<p>{relevantCourses}</p>
-				</div>
+				<>
+					<div>
+						<div class='flex flex-row gap-2 items-center'>
+							<CometIcon />
+							<h6 class='font-semibold text-sm text-gray-600 dark:text-white'>Cursos relevantes</h6>
+						</div>
+						{relevantCourses && (
+							<ul class='list-disc list-inside pl-2'>
+								{relevantCourses.split(',').map((course) => (
+									<li>{course}</li>
+								))}
+							</ul>
+						)}
+					</div>
+				</>
 			)
 		}
 		{

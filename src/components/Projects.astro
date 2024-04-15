@@ -16,6 +16,11 @@ const TAGS = {
 		class: 'bg-[#003159] text-white',
 		icon: Tailwind,
 	},
+	FIGMA: {
+		name: 'Figma',
+		class: 'bg-[#2C2C2C] text-white',
+		icon: null,
+	},
 };
 const PROJECTS = [
 	{
@@ -28,12 +33,13 @@ const PROJECTS = [
 		tags: [TAGS.NEXT, TAGS.TAILWIND],
 	},
 	{
-		title: 'AdventJS - Retos de programación con JavaScript y TypeScript',
+		title: 'Diseño UX/UI - Plataforma de noticias de deportes',
 		description:
-			'Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.',
-		link: '',
-		image: '',
-		tags: [TAGS.NEXT, TAGS.TAILWIND],
+			'Diseño de interfaz de usuario y experiencia de usuario para una plataforma de noticias de deportes. Prototipo interactivo creado con Figma.',
+		link: 'https://www.figma.com/',
+		github: null,
+		image: '/projects/sports-news.png',
+		tags: [],
 	},
 ];
 ---
@@ -45,7 +51,7 @@ const PROJECTS = [
 				<div class='w-full md:w-1/2'>
 					<div class='relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50'>
 						<img
-							alt='Recién llegado vs 5 años en Nueva Zelanda'
+							alt='Proyecto de portfolio'
 							class='object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105'
 							loading='lazy'
 							src={image}
